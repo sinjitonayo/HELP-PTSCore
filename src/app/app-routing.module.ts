@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MerchantRegistrationComponent } from './pages/merchant/merchant-registration/merchant-registration.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path: "", component: MerchantRegistrationComponent}
+  {path: "", component: HomeComponent},
+  {path: "merchant/register", component: MerchantRegistrationComponent}
 ];
 
 @NgModule({
