@@ -44,7 +44,6 @@
         placeholder="Enter merchant's username"
         size="30"
         autocomplete="off"
-        (focusout)="isUsernameAvailable"
       />
     </div>
 
@@ -58,6 +57,10 @@
       "
     >
       Merchant's username is required
+    </div>
+
+    <div class="text-xs text-red-500" *ngIf="!isUsernameAvailable()">
+      Username already taken
     </div>
 
     <div class="mt-6">
@@ -100,6 +103,10 @@
       >
         Invalid email
       </div>
+    </div>
+
+    <div class="text-xs text-red-500" *ngIf="!isEmailAvailable()">
+      Email has been used
     </div>
 
     <div class="mt-6">

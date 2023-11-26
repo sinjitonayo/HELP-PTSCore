@@ -40,18 +40,31 @@ export class MerchantRegistrationFormComponent {
   ngOnInit() {
     // Retrieve merchantRegistered from localStorage on component initialization
     const storedMerchants = localStorage.getItem("merchantRegistered");
-    if (storedMerchants) {
+    if (storedMerchants != null) {
       this.merchantRegistered = JSON.parse(storedMerchants);
+      this.numberOfMerchant = this.merchantRegistered.length
     }
+    console.log(this.numberOfMerchant)
   }
 
-  isUsernameAvailable(username: string): boolean {
+  isUsernameAvailable(): boolean {
     const storedMerchants = localStorage.getItem("merchantRegistered");
+    const username = this.registrationForm.value.merchantUsername
     if(storedMerchants === null){
       return true
     }
     const existingUsers = JSON.parse(storedMerchants) || [];
     return !existingUsers.some((user: any) => user.merchantUsername === username);
+  }
+
+  isEmailAvailable(): boolean {
+    const storedMerchants = localStorage.getItem("merchantRegistered");
+    const email = this.registrationForm.value.merchantEmail
+    if(storedMerchants === null){
+      return true
+    }
+    const existingEmails = JSON.parse(storedMerchants) || [];
+    return !existingEmails.some((user: any) => user.merchantEmail === email)
   }
 
   constructor(

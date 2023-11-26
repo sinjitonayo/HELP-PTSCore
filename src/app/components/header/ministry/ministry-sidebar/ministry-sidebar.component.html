@@ -1,0 +1,81 @@
+<!-- Sidebar -->
+<div class="fixed left-0 top-0 h-full w-80 bg-gray-800 px-5 py-10 z-10">
+  <a class="flex items-center justify-center pb-4" routerLink="/">
+    <img
+      src="assets/img/logo-white.png"
+      alt=""
+      class="h-10 w-10 rounded object-cover"
+    />
+    <span class="ml-3 text-lg font-bold text-gray-200">Promo Tourism</span>
+  </a>
+
+  <div class="pb-4">
+    <img
+      src="https://images.unsplash.com/photo-1682687220945-922198770e60?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt=""
+      class="mx-auto mt-8 h-24 w-24 rounded-full"
+    />
+    <span
+      class="mb-2 mt-4 flex items-center justify-center text-lg font-medium text-white"
+      >Ministry Officer</span
+    >
+    <a class="flex items-center justify-center">
+      <button
+        class="rounded-full border border-gray-300 px-5 py-1 text-white transition-all duration-200 hover:bg-secondary-color"
+      >
+        Edit
+      </button>
+    </a>
+  </div>
+  <ul class="mt-4">
+    <li class="mb-2">
+      <a
+        href=""
+        routerLink="/ministry"
+        class=" active mx-auto flex w-3/4 items-center rounded-md px-4 py-2 text-gray-300 hover:bg-gray-950"
+        [ngClass]="{'bg-gray-700': isDashboardShown}"
+        (click)="setActive('dashboard')"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span class="ml-3 text-lg">Dashboard</span>
+      </a>
+    </li>
+
+    <li class="mb-2">
+      <a
+        href=""
+        routerLink="/ministry/manage"
+        class="mx-auto flex w-3/4 items-center rounded-md px-4 py-2 text-gray-300  hover:bg-gray-950 hover:text-gray-100"
+        [ngClass]="{'bg-gray-700': isReviewMerchant}"
+        (click)="setActive('reviewMerchant')"
+      >
+        <mat-icon>done_outline</mat-icon>
+        <span class="ml-3 text-lg">Review Merchant</span>
+      </a>
+    </li>
+
+    <li class="mb-2">
+      <a
+        href=""
+        routerLink="/analytics"
+        class="mx-auto flex w-3/4 items-center rounded-md px-4 py-2 text-gray-300 hover:bg-gray-950 hover:text-gray-100"
+        [ngClass]="{'bg-gray-700': isAnalytics}"
+        (click)="setActive('analytics')"
+      >
+        <mat-icon>show_chart</mat-icon>
+        <span class="ml-3 text-lg">Analytics</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="absolute bottom-0 left-0 right-0 px-5 py-10">
+    <a
+      (click)="logout()"
+      href=""
+      class="mx-auto flex w-3/4 items-center rounded-md px-4 py-2 text-gray-300 hover:bg-gray-950 hover:text-gray-100"
+    >
+      <mat-icon>exit_to_app<</mat-icon>
+      <span class="ml-3 text-lg">Logout</span>
+    </a>
+  </div>
+</div>

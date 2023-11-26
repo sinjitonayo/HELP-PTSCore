@@ -1,0 +1,74 @@
+<div class="overflow-hidden lg:ml-80">
+  <div class="px-20 py-10">
+    <div class="flex items-center justify-between">
+      <form class="flex-shrink-0">
+        <label
+          for="default-search"
+          class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Search</label
+        >
+        <div class="relative">
+          <div
+            class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
+          >
+            <mat-icon>search</mat-icon>
+          </div>
+          <input
+            type="search"
+            id="default-search"
+            class="block w-96 rounded-full border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="Search Mockups, Logos..."
+            required
+          />
+        </div>
+      </form>
+
+      <span class="text-xl font-bold text-gray-700">Ministry Dashboard</span>
+    </div>
+  </div>
+
+  
+  <div class="relative overflow-x-auto rounded-xl p-10 shadow-md sm:rounded-lg">
+    <h4 class="py-3 text-2xl font-semibold">Manage Merchant</h4>
+    <table
+      class="w-full text-left text-sm text-black rtl:text-right dark:text-gray-400"
+    >
+      <thead
+        class="bg-gray-50 text-xs uppercase text-black dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Merchant's Name</th>
+          <th scope="col" class="px-6 py-3">Email</th>
+          <th scope="col" class="px-6 py-3">Contact Number</th>
+          <th scope="col" class="px-6 py-3">Description</th>
+          <th scope="col" class="px-6 py-3">Status</th>
+          <th scope="col" class="px-6 py-3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="border-b bg-white text-black"
+          *ngFor="let merchant of merchantData; let i = index"
+        >
+          <th
+            scope="row"
+            class="whitespace-nowrap px-6 py-4 font-medium text-black"
+          >
+            {{ merchant.merchantName }}
+          </th>
+          <td class="px-6 py-4">{{ merchant.merchantEmail }}</td>
+          <td class="px-6 py-4">{{ merchant.merchantPhone }}</td>
+          <td class="px-6 py-4">{{ merchant.merchantDescription }}</td>
+          <td class="px-6 py-4">{{ merchant.merchantStatus }}</td>
+          <td class="px-6 py-4">
+            <a
+              href="#"
+              class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+              >Review</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

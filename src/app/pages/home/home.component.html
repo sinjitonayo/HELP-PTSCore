@@ -1,0 +1,53 @@
+<app-loader *ngIf="loader"></app-loader>
+<app-default-header></app-default-header>
+<section>
+  <div class="container max-w-screen-xl mx-auto px-4 py-8 lg:px-8">
+    <div class="mx-auto items-center justify-items-center grid grid-cols-12">
+      <div
+        class="order-2 col-span-12 md:order-1 lg:col-span-4 lg:mx-auto lg:my-auto lg:flex"
+      >
+        <div class="mx-auto">
+          <h1 class="mb-6 mt-4 text-center lg:text-left text-4xl lg:text-6xl font-bold leading-tight text-gray-500">
+            Life is <span class="text-primary-color">short</span>, and
+            <span class="text-primary-color">the world is wide!</span>
+          </h1>
+          <p
+            class="mb-8 text-center lg:text-left font-inter text-base text-gray-900 opacity-50"
+          >
+            Explore anywhere in Malaysia without any hesitation, seamless and no extra work!
+          </p>
+          <div class="">
+            <form>
+              <label
+                for="search"
+                class="sr-only mb-2 text-sm font-medium text-gray-900"
+                >Search</label
+              >
+              <div class="relative mx-auto">
+                <div
+                  class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 md:left-24 lg:left-0"
+                >
+                  <mat-icon class="opacity-50">search</mat-icon>
+                </div>
+                <input
+                  type="search"
+                  id="search"
+                  class="mx-auto block w-full rounded-full border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 md:w-2/3 lg:w-full"
+                  placeholder="Search"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:order-2 lg:col-span-8">
+        <div class="lg:flex justify-end">
+            <img src="assets/img/hero-image.png" alt="" class="md:w-3/4 lg:w-4/5 mr-0"/>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-screen"></div>

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./merchant-registration.component.css']
 })
 export class MerchantRegistrationComponent {
+  loader: boolean = true
 
+  ngOnInit() {
+    setTimeout(() => {
+      this.loader = false
+    }, 500)
+  }
 }

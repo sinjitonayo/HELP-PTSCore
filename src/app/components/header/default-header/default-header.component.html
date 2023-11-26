@@ -1,0 +1,395 @@
+<header>
+    <nav class="z-10 border-gray-200 bg-primary-color text-sm">
+      <div
+        class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-3 text-white"
+      >
+        <!-- Left Side -->
+        <a href="#" class="z-10 flex items-center">
+          <img
+            src="assets/img/{{ iconName }}.png"
+            class="mr-3 h-10"
+            alt="PTS Logo"
+          />
+          <span
+            class="self-center whitespace-nowrap text-lg font-bold italic md:text-xl"
+            [class.text-black]="isScrolled"
+          >
+            Promo <span class="">Tourism</span>
+          </span>
+        </a>
+  
+        <!-- Right Side -->
+        <div
+          class="hidden w-full items-center justify-between md:flex md:w-auto"
+          [class.text-black]="isScrolled"
+          [@fadeInOut]
+        >
+          <ul
+            class="border-gray-10 md: mt-4 flex flex-col items-center rounded-lg border p-4 font-medium md:mt-0 md:flex-row md:border-0 md:p-0"
+          >
+            <div class="z-10 flex items-center hover:text-primary-color-alt">
+              <li>
+                <a routerLink="merchant/register">
+                  <div class="group relative">
+                    <div class="left-0 flex items-center pl-3">
+                      <mat-icon>handshake</mat-icon>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <a routerLink="merchant/register" class="pl-2 pr-5"
+                >Partner with us</a
+              >
+            </div>
+            <div class="z-10">
+              <button routerLink="login"
+                type="button"
+                class="mr-3 rounded-lg border-primary-color-alt px-4 py-2 text-center text-sm font-medium hover:bg-primary-color focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                class="ml-3 rounded-lg border-primary-color-alt bg-primary-color-alt px-4 py-2 text-center text-sm font-medium text-white hover:bg-primary-color focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0"
+              >
+                Sign Up
+              </button>
+            </div>
+          </ul>
+        </div>
+  
+        <!-- Mobile Top Menu -->
+        <button
+          (click)="toggleMenu()"
+          class="z-20 md:hidden"
+          id="hamburger"
+          [class.hamburger-active]="isMenuClicked"
+        >
+          <span
+            class="hamburger-line white-line origin-top-left transition duration-300 ease-in-out"
+          ></span>
+          <span
+            class="hamburger-line-short white-line origin-right transition duration-300 ease-in-out"
+          ></span>
+          <span
+            class="hamburger-line white-line origin-bottom-left transition duration-300 ease-in-out"
+          ></span>
+        </button>
+      </div>
+    </nav>
+  
+    <div class="absolute top-0">
+      <nav
+        class="fixed left-0 right-0 z-10 border-gray-200 bg-white text-sm"
+        [@fadeInOut]
+        *ngIf="isScrolled"
+      >
+        <div
+          class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-3 text-black"
+        >
+          <!-- Left Side -->
+          <a href="#" class="z-10 flex items-center">
+            <img
+              src="assets/img/{{ iconName }}.png"
+              class="mr-3 h-10"
+              alt="PTS Logo"
+            />
+            <span
+              class="self-center whitespace-nowrap text-xl font-bold italic"
+              [class.text-black]="isScrolled"
+            >
+              Promo <span class="">Tourism</span>
+            </span>
+          </a>
+  
+          <!-- Right Side -->
+          <div
+            class="hidden w-full items-center justify-between md:flex md:w-auto"
+            [class.text-black]="isScrolled"
+            [@fadeInOut]
+            id="navbar-sticky"
+          >
+            <ul
+              class="border-gray-10 md: mt-4 flex flex-col items-center rounded-lg border p-4 font-medium md:mt-0 md:flex-row md:border-0 md:p-0"
+            >
+              <div class="z-10 flex items-center hover:text-primary-color-alt">
+                <li>
+                  <a routerLink="merchant/register">
+                    <div class="group relative">
+                      <div class="left-0 flex items-center pl-3">
+                        <mat-icon>handshake</mat-icon>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <a routerLink="merchant/register" class="pl-2 pr-5"
+                  >Partner with us</a
+                >
+              </div>
+              <div class="z-10">
+                <button
+                  routerLink="login"
+                  type="button"
+                  class="mr-3 rounded-lg border-primary-color-alt px-4 py-2 text-center text-sm font-medium text-black hover:bg-primary-color focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0"
+                >
+                  Login
+                </button>
+                <button
+                  type="button"
+                  class="ml-3 rounded-lg border-primary-color-alt bg-primary-color-alt px-4 py-2 text-center text-sm font-medium text-white hover:bg-primary-color focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </ul>
+          </div>
+  
+          <!-- Mobile Top Menu -->
+          <button
+            (click)="toggleMenu()"
+            class="z-20 md:hidden"
+            id="hamburger"
+            [class.hamburger-active]="isMenuClicked"
+          >
+            <span
+              class="hamburger-line origin-top-left transition duration-300 ease-in-out"
+            ></span>
+            <span
+              class="hamburger-line-short origin-right transition duration-300 ease-in-out"
+            ></span>
+            <span
+              class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
+            ></span>
+          </button>
+        </div>
+  
+        <div class="hidden md:relative md:block">
+          <nav class="sticky left-0 right-0 z-10 bg-white shadow-lg">
+            <div class="mx-auto max-w-screen-xl px-4 py-2">
+              <div class="flex items-center justify-between">
+                <ul class="mr-6 mt-0 flex flex-row space-x-8 text-sm font-medium">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-main-color-light block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0"
+                      aria-current="page"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent"
+                      >Explore</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      id="dropdownDelayButton"
+                      data-dropdown-toggle="dropdownDelay"
+                      data-dropdown-delay="100"
+                      data-dropdown-trigger="hover"
+                      class="inline-flex items-center rounded-lg text-center text-gray-900"
+                      type="button"
+                    >
+                      Accomodation
+                    </button>
+  
+                    <!-- Dropdown menu -->
+                    <div
+                      id="dropdownDelay"
+                      class="z-10 hidden divide-y divide-gray-100 rounded-md bg-white shadow dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="dropdownDelayButton"
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                            >Hotels</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                            >Homestay</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                            >Villas & Apt</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="rounded text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent"
+                      >Tourism Attraction</a
+                    >
+                  </li>
+                </ul>
+                <div class="w-1/4">
+                  <form class="mx-auto w-full">
+                    <label
+                      for="search"
+                      class="sr-only mb-2 text-sm font-medium text-white"
+                      >Search</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
+                      >
+                        <svg
+                          class="h-3 w-3 text-gray-500"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="search"
+                        id="search"
+                        class="hidden w-full rounded-2xl border bg-gray-50 p-2 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 md:block"
+                        placeholder="Hotels, Ticket, etc"
+                        required
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Bottom Menu -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-[2] mx-2 mb-2 flex flex-row items-start rounded-[24rem] border bg-white p-0 backdrop-blur-sm md:hidden"
+    >
+      <a
+        href=""
+        class="flex h-16 w-[90px] flex-grow flex-col items-center justify-center py-4"
+      >
+        <mat-icon
+          class="small-icon items-center justify-center text-center text-primary-color-alt"
+          >home</mat-icon
+        >
+        <span class="mt-1 text-center text-xs font-normal text-primary-color-alt"
+          >Home</span
+        >
+      </a>
+  
+      <a
+        href=""
+        class="flex h-16 w-[90px] flex-grow flex-col items-center justify-center py-4"
+      >
+        <mat-icon
+          class="small-icon items-center justify-center text-center opacity-70"
+          >receipt</mat-icon
+        >
+        <span class="mt-1 text-center text-xs font-normal opacity-70"
+          >Receipt</span
+        >
+      </a>
+  
+      <a
+        href=""
+        class="flex h-16 w-[90px] flex-grow flex-col items-center justify-center py-4"
+      >
+        <mat-icon class="small-icon items-center justify-center text-center"
+          >account_box</mat-icon
+        >
+        <span class="mt-1 text-center text-xs">Your Account</span>
+      </a>
+    </div>
+  
+    <!-- Drawer -->
+    <div
+      class="fixed left-0 right-0 top-0 z-10 h-screen bg-slate-900 opacity-30"
+      *ngIf="isMenuClicked"
+      [@fadeInOut]
+      (click)="toggleMenu()"
+    ></div>
+    <div
+      *ngIf="isMenuClicked"
+      [@slideInOut]
+      id="drawer-bottom"
+      class="fixed bottom-0 left-0 right-0 z-10 w-full overflow-y-auto rounded-t-xl bg-white p-5 font-manrope text-sm drop-shadow-sm transition-transform duration-1000"
+      tabindex="-1"
+      aria-labelledby="drawer-bottom-label"
+    >
+      <div class="z-20 flex items-center justify-center">
+        <div class="my-2 block h-1 w-16 bg-black"></div>
+      </div>
+      <h5
+        id="drawer-bottom-label"
+        class="mb-4 inline-flex items-center text-base font-semibold text-slate-900"
+      >
+        Menu
+      </h5>
+      <button
+        (click)="toggleMenu()"
+        type="button"
+        data-drawer-hide="drawer-bottom-example"
+        aria-controls="drawer-bottom-example"
+        class="absolute right-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+      >
+        <mat-icon>close</mat-icon>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <button class="w-full py-4 text-left" routerLink="merchant/register">
+        <div class="flex cursor-pointer items-center justify-between">
+          <div class="just flex items-center">
+            <a href="" class=""> Be our partner </a>
+            <mat-icon class="ml-2">handshake</mat-icon>
+          </div>
+  
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
+      </button>
+      <button class="w-full py-4 text-left">
+        <div class="flex cursor-pointer items-center justify-between">
+          <a href="" class=""> Accomodation </a>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
+      </button>
+      <button class="w-full py-4 text-left">
+        <div class="flex cursor-pointer items-center justify-between">
+          <a href="" class=""> How to book </a>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
+      </button>
+  
+      <div class="flex cursor-pointer items-center justify-between gap-4 pt-2">
+        <button
+          class="w-full rounded-md bg-primary-color-alt py-2 font-manrope font-normal text-white"
+        >
+          <a href="" routerLink="login">Login</a>
+        </button>
+        <button
+          class="w-full rounded-md bg-slate-100 py-2 font-manrope font-normal text-primary-color-alt"
+        >
+          <a routerLink="merchant/register">Register</a>
+        </button>
+      </div>
+    </div>
+  </header>
+  

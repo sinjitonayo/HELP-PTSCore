@@ -8,3 +8,27 @@
 * {
   @apply p-0 m-0 box-border scroll-smooth;
 }
+
+.white-line {
+  @apply bg-white !important;
+}
+.hamburger-line {
+  @apply w-[22px] h-[1px] my-2 block bg-black;
+}
+
+.hamburger-line-short {
+  @apply w-[16px] h-[1px] my-2 ml-[5px] block bg-black transition-all duration-200;
+}
+
+
+.hamburger-active > span:nth-child(1) {
+  @apply h-[2px];
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply h-[2px] ml-0 transition-all duration-200;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply h-[2px];
+}
