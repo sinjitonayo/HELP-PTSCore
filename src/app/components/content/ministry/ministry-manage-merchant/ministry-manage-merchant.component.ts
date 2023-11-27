@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MerchantData } from 'src/app/interfaces/register-merchant';
+import { MinistryManageModalService } from 'src/app/services/ministry-manage-modal.service';
 
 @Component({
   selector: 'app-ministry-manage-merchant',
@@ -8,9 +9,8 @@ import { MerchantData } from 'src/app/interfaces/register-merchant';
 })
 export class MinistryManageMerchantComponent {
   merchantData: MerchantData[] = []
-  filteredMerchants: MerchantData[] = []
-  numberOfMerchant: number = this.merchantData.length
  
+  constructor(private modal: MinistryManageModalService){}
   ngOnInit(): void {
     this.retrieveMerchantData();
   }
@@ -19,12 +19,13 @@ export class MinistryManageMerchantComponent {
     const storedMerchants = localStorage.getItem("merchantRegistered");
     if (storedMerchants) {
       this.merchantData = JSON.parse(storedMerchants);
-      this.numberOfMerchant = this.merchantData.length
     }
   }
 
-  getPendingMerchantData() : number{
-    this.filteredMerchants = this.merchantData.filter((merchant: MerchantData) => merchant.merchantStatus === 'pending')
-    return this.filteredMerchants.length
+  openModal(merchant: any){
+    this.modal.showDialog(merchant)
   }
+
+ 
+
 }

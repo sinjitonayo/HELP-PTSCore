@@ -16,7 +16,8 @@ import { MinistryDashboardContentComponent } from './components/content/ministry
 import { MinistrySidebarComponent } from './components/header/ministry/ministry-sidebar/ministry-sidebar.component';
 import { MinistryDashboardComponent } from './pages/ministry/ministry-dashboard/ministry-dashboard.component';
 import { MinistryReviewComponent } from './pages/ministry/ministry-review/ministry-review.component';
-import { MinistryManageMerchantComponent } from './components/content/ministry/ministry-manage-merchant/ministry-manage-merchant.component'
+import { MinistryManageMerchantComponent } from './components/content/ministry/ministry-manage-merchant/ministry-manage-merchant.component';
+import { MerchantReviewModalComponent } from './components/merchant-review-modal/merchant-review-modal.component'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MinistryManageMerchantComponent } from './components/content/ministry/m
     MinistryDashboardComponent,
     MinistryReviewComponent,
     MinistryManageMerchantComponent,
+    MerchantReviewModalComponent,
     
   ],
   imports: [

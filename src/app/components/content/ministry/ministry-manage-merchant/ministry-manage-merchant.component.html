@@ -27,7 +27,6 @@
     </div>
   </div>
 
-  
   <div class="relative overflow-x-auto rounded-xl p-10 shadow-md sm:rounded-lg">
     <h4 class="py-3 text-2xl font-semibold">Manage Merchant</h4>
     <table
@@ -62,13 +61,17 @@
           <td class="px-6 py-4">{{ merchant.merchantStatus }}</td>
           <td class="px-6 py-4">
             <a
-              href="#"
-              class="font-medium text-blue-600 hover:underline dark:text-blue-500"
-              >Review</a
+              class="font-medium text-blue-600 hover:underline"
+            >
+              <button (click)="openModal(merchant)" class="bg-gray-300 py-2 rounded-lg px-3 hover:bg-primary-color hover:text-white">
+                Review
+              </button></a
             >
           </td>
         </tr>
       </tbody>
     </table>
+
+    <app-merchant-review-modal></app-merchant-review-modal>
   </div>
 </div>
